@@ -1,0 +1,31 @@
+#测试数据存放路径
+TestData: 
+  file: ./config/Data_Case.xls
+#开发环境数据库
+AntDBDev: 
+  dbname: testdb3 
+  dbuser: user1 
+  dbpassword: 456@789@321
+  dbhost: localhost
+  dbport: 6655
+#数据库服务器地址
+AntDBServer: 
+  host: localhost
+  port: 22022
+  username: antdb
+  passwd: antdb
+#接口表和历史表信息
+db_table: 
+  histable: ['v4command_store_931_20230721','PS_DIRECTRESP_STORE_931_202307','ps_split_his_931_202307','ps_provision_his_931_202307','i_provision_his_931_202307']
+  interfacetable: ['i_provision_931',"ps_provision_931","ps_provision_split_931",'i_ps_provision_reset_931']
+#同步接口相关信息
+sync_interface:
+  webservice: http://www.example.com/serviceurl?wsdl
+
+http_interface: 
+  host: localhost
+  port: 7777
+  url: /
+
+
+

@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jul 31 19:55:26 CST 2023","Mon Jul 31 19:56:16 CST 2023","50485","test_case.test_table_interface.test_table_normal","test_table_interface","TestTableInterface","","","第四步:拆分处理网元回执",""
+"passed","Mon Jul 31 19:18:18 CST 2023","Mon Jul 31 19:23:40 CST 2023","321578","test_case.test_table_interface.test_table_normal","test_table_interface","TestTableInterface","","","第一步:调度入表工单处理",""
+"passed","Mon Jul 31 19:34:31 CST 2023","Mon Jul 31 19:55:26 CST 2023","1254524","test_case.test_table_interface.test_table_normal","test_table_interface","TestTableInterface","","","第三步:网元连接","网元流程休眠20ms"
+"passed","Mon Jul 31 19:23:40 CST 2023","Mon Jul 31 19:34:31 CST 2023","651446","test_case.test_table_interface.test_table_normal","test_table_interface","TestTableInterface","","","第二步:拆分连接处理",""
+"passed","Mon Jul 31 19:56:16 CST 2023","Mon Jul 31 19:57:07 CST 2023","51022","test_case.test_table_interface.test_table_normal","test_table_interface","TestTableInterface","","","第五步:调度回执处理",""
