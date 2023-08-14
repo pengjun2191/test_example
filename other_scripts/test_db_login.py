@@ -3,17 +3,17 @@ from psycopg2 import extras
 import cx_Oracle 
 
 
-dbip_oracle="10.10.10.124"
+dbip_oracle="localhost"
 dbport_oracle="1521"
-dbname_oracle="oel1247"
-dbuser_oracle="lnkt4"
-dbpwd_oracle="lnkt4"
+dbname_oracle="test"
+dbuser_oracle="test"
+dbpwd_oracle="test"
 
 dbuser_antdb = "user1"
-dbip_antdb  = "10.19.30.66"
-dbname_antdb  = "testdb3"
-dbport_antdb  = "6655"
-dbpwd_antdb  = "456@789@321"
+dbip_antdb  = "localhost"
+dbname_antdb  = "test"
+dbport_antdb  = "1234"
+dbpwd_antdb  = "test"
 
 #antdb
 sqls_delete_antdb="delete from ps_test_phone ptp;"
