@@ -5,10 +5,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import asyncio
 import httpx
 from pj_function.get_kt_http_interface_data import target_queue
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg
 import threading
 
-cfg=get_config()
+
 async def post_result(url,json_str):
     async with httpx.AsyncClient() as client:
         await client.post(url,json=json_str)

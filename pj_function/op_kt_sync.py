@@ -2,13 +2,12 @@ import  os,sys
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from common.KT_op_webservice import  op_webservice
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg
 from common.KT_op_socket import op_socket
 import struct
 
 class op_ktsync:
     def __init__(self) -> None:
-        cfg=get_config()
         self.webserviceurl=cfg.webserviceurl["webservice"]
         
     def webservice_qry_sendProv(self,timeOut,billId,doneCode,actionId,psServiceType,regionCode,strParam):

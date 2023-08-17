@@ -2,14 +2,13 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg
 from common.KT_op_remote import Paramiko_ssh
 from pj_function.op_kt_log import query_log
 from datetime import datetime
 
 class get_kt_log:
     def __init__(self) -> None:
-        cfg=get_config()
         self.server=cfg.Server
         self.date_day=datetime.date(datetime.now()).strftime("%Y%m%d")[2:]
     def get_log(self,file_name):

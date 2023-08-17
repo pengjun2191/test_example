@@ -3,7 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from common.KT_op_excel import OpExcel
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg_db
 from pj_function.get_kt_table_info import get_table_info
 import json,datetime
 from queue import Queue
@@ -11,7 +11,7 @@ from copy import deepcopy,copy
 
 """生成模拟CRM发送的http工单json数据队列"""
 get_t_info=get_table_info()
-cfg_db=get_config()
+
 
 table_values=  {"ps_id":None,
                 "busi_code":None,

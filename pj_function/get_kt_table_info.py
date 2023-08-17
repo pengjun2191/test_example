@@ -3,12 +3,11 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from common.KT_op_antdb  import OpAntDB
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg
 from pj_function.op_kt_table import  query_his
 
 class get_table_info:
     def __init__(self) -> None:
-        cfg=get_config()
         self.db_config=cfg.AntDBTest
         self.tablenames=cfg.tablename["histable"]+cfg.tablename["interfacetable"]
         self.content={}

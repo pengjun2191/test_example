@@ -2,8 +2,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from pj_function.get_config import get_config
-from common.KT_op_antdb  import OpAntDB as opdb
+
 
 
 """ 

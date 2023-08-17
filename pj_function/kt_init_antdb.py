@@ -3,7 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from common.KT_op_antdb  import OpAntDB as opdb
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg
 from common.KT_base_dbop import OpDb
 
 #adb_conn="dbname=jfjs user=settle password=settle0328 host=10.19.93.73 port=5432"
@@ -25,7 +25,6 @@ def init_db(db:OpDb,init_db_path,endwithstr=".sql"):
         db.cl_db()
 
 def init():
-    cfg=get_config()
     init_db_path=cfg.init_db["db_scripts"]
     #初始化进程配置
     db=opdb(cfg.AntDBTest)

@@ -2,12 +2,11 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg
 from common.KT_op_antdb  import OpAntDB 
 
 class get_process_info:
     def __init__(self) -> None:
-        cfg=get_config()
         self.ip=cfg.appControl_cfg['appControl_ip']
         self.port=cfg.appControl_cfg['appControl_port']
         self.antdb=cfg.AntDBTest

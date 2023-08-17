@@ -37,6 +37,8 @@ class get_config:
         self.tablename=section_all["db_table"]
         self.webserviceurl=section_all["sync_interface"]
         self.httpurl=section_all["http_interface"]
+
+cfg_singleton=get_config()
 if __name__=="__main__":
     cfg=get_config()
     print(cfg.webserviceurl["webservice"])
