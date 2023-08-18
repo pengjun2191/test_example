@@ -12,11 +12,11 @@ import inspect
 from pj_function.op_kt_process import op_ktprocess
 from pj_function.get_kt_process_in_db import get_process_info
 from pj_function.get_kt_table_info import get_table_info
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg
 from common.KT_op_excel import WtXlsx
 
 
-cfg=get_config()
+
 get_t_info=get_table_info()
 op_kt=op_ktprocess()
 get_process=get_process_info()

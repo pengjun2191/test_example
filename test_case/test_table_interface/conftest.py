@@ -12,7 +12,7 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from common.KT_op_excel import OpExcel
 from pj_function.op_kt_table import  insert_table,delete_table
-from pj_function.get_config import get_config
+from pj_function.get_config import cfg_singleton as cfg_db
 from pj_function.op_kt_process import op_ktprocess
 from common.KT_op_antdb  import OpAntDB as opdb
 import pytest
@@ -20,7 +20,6 @@ from pj_function.get_kt_table_info import get_table_info
 
 
 get_t_info=get_table_info()
-cfg_db=get_config()
 data=[{}]
 data[0]["file"]=cfg_db.TestData["file"]
 data[0]["configdb"]=cfg_db.AntDBTest
