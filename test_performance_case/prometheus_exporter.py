@@ -4,11 +4,13 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import six
 from itertools import chain
-
 from flask import request, Response
 from locust import stats as locust_stats, runners as locust_runners
 from locust import User, task, events
 from prometheus_client import Metric, REGISTRY, exposition
+
+
+
 
 # This locustfile adds an external web endpoint to the locust master, and makes it serve as a prometheus exporter.
 # Runs it as a normal locustfile, then points prometheus to it.
@@ -113,7 +115,8 @@ def locust_init(environment, runner, **kwargs):
         REGISTRY.register(LocustCollector(environment, runner))
 
 
-class WebsiteUser(User):
+
+class WebsiteUser_fast(User):
     host = 'http://www.baidu.com'
     @task(20)
     def hello(self):

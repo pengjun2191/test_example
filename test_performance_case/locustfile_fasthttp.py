@@ -1,7 +1,7 @@
 import sys,os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from locust import HttpUser, TaskSet, task,between,events
+from locust import  TaskSet, task,between,events,FastHttpUser
 from gevent._semaphore import Semaphore
 
 
@@ -39,53 +39,24 @@ class UserBehavior(TaskSet):
 
         all_locusts_spawned.wait() # 同步锁等待
 
-    @task(1)
+    @task(96)
     def test1(self):
-      
-
-        url = '/list'
-        param = {
-            "limit":8,
-            "offset":0,
-        }
-        with self.client.get(url,params=param,headers={},catch_response = True) as response:
-            print("用户浏览登录首页")
-
-    @task(1)
-    def test2(self):
-
-        url = '/detail'
-        param = {
-            'id':1
-        }
-        with self.client.get(url,params=param,headers={},catch_response = True) as response:
-            print("用户同时执行查询")
-
-    @task(1)
-    def test3(self):
-        """
-        用户查看查询结果
-        :return:
-        """
-
-        url = '/order'
-        param = {
-            "limit":8,
-            "offset":0,
-        }
-        with self.client.get(url,params=param,headers={},catch_response = True) as response:
-            print("用户查看查询结果")
-
+        url = '/upp/login.jsp'
+        with self.client.get(url,headers={},catch_response = True) as response:
+            print(response)
+            print("登录首页")
 
     def on_stop(self):
         self.logout()
 
-
-class WebsiteUser(HttpUser):
+class WebsiteUser_fast(FastHttpUser):
     host = 'http://www.baidu.com'
     tasks = [UserBehavior]
 
     wait_time = between(1, 2)
 
+
+
+
 if __name__ == '__main__':
-    os.system("locust -f locustfile.py --worker")
+    os.system("locust -f locustfile_fasthttp.py --worker")

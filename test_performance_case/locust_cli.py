@@ -7,8 +7,8 @@ def locust_cli():
                     help='input master file name,default:./test_performance_case/prometheus_exporter.py')
     parser.add_argument('-wt','--worker_type', dest='worker_type', default="python",choices=["go","python"],
                     help='input worker file type,default:python')
-    parser.add_argument('-pwn','--python_worker_name', dest='python_worker_name', default="test_performance_main.py",
-                    help='input python worker file name,default:test_performance_main.py')
+    parser.add_argument('-pwn','--python_worker_name', dest='python_worker_name', default="./test_performance_case/locust_client_main.py",
+                    help='input python worker file name,default:./test_performance_case/locust_client_main.py')
     parser.add_argument('-gwn','--go_worker_name', dest='go_worker_name', default="main.go",
                     help='input go worker file name,default: main.go')
     parser.add_argument('-wh','--worker_host', dest='worker_host', default="localhost",
